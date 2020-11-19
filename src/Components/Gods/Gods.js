@@ -1,7 +1,9 @@
 import React from 'react';
 
-import './Gods.css';
 import Example from './DropDown';
+import Cards from './Cards';
+
+import './Gods.css';
 
 class Gods extends React.Component {
     state = {
@@ -37,12 +39,11 @@ class Gods extends React.Component {
         return (
             <div >
                 <Example />
-                {this.state.gods.map(god => (
-                    <div className="container" key={god.id}>
-                        <img className="img" src={god.avatar} alt={god.name} />
-                        <h2>{god.name}</h2>
-                    </div>
-                ))}
+                <div className="container">
+                    {this.state.gods.map(god => (
+                        <Cards god={god} key={god.id} />
+                    ))}
+                </div>
             </div>
         );
     }

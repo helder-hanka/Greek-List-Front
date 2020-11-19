@@ -13,6 +13,7 @@ const Bardropdown = (props) => {
 
   return (
     <div className = "button" >
+      <h4>Select the skill : </h4>
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
       <DropdownToggle caret>
         All gods 
@@ -29,7 +30,7 @@ const Bardropdown = (props) => {
 
      <Dropdown isOpen={button} toggle={inverseButton}>
       <DropdownToggle caret>
-        competency gods
+        Competency gods
         </DropdownToggle>
       <DropdownMenu>
         <DropdownItem header>competency</DropdownItem>

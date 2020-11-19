@@ -1,7 +1,7 @@
 import React from 'react';
-import BardropDown from './DropDown';
 
 import './Gods.css';
+import Example from './DropDown';
 
 class Gods extends React.Component {
     state = {
@@ -36,7 +36,7 @@ class Gods extends React.Component {
     render() {
         return (
             <div>
-                <BardropDown/>
+                <Example />
                 {this.state.gods.map(god => (
                     <div className="container" key={god.id}>
                         <img className="img" src={god.avatar} alt={god.name} />

@@ -4,8 +4,8 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Button } from 'reactstrap
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Cards.css';
-
 const Cards = ({ god }) => {
+    console.log(god.avatar);
         return (
             <div className="container">
                 <Card className="style">
@@ -16,7 +16,7 @@ const Cards = ({ god }) => {
                         Some quick example text to build on the card title and make up the bulk of
                         the card's content.
                         </CardText>
-                        <Button variant="primary">View God</Button>
+                        <Button variant="primary">Rent</Button>
                     </CardBody>
                 </Card>
             </div>

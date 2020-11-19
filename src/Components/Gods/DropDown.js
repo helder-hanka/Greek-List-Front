@@ -27,18 +27,18 @@ const Bardropdown = (props) => {
       </DropdownMenu>
     </Dropdown>
 
-     <Dropdown isOpen={button} toggle={inverseButton}>
-      <DropdownToggle caret>
-        competency gods
-        </DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem header>competency</DropdownItem>
-        <DropdownItem>amour</DropdownItem>
-        <DropdownItem>guerre</DropdownItem>
-        <DropdownItem>fete</DropdownItem>
-        <DropdownItem>ivresse</DropdownItem>
-      </DropdownMenu>
-    </Dropdown>
+      <Dropdown isOpen={button} toggle={inverseButton}>
+        <DropdownToggle caret>
+          competency gods
+          </DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem header>competency</DropdownItem>
+          <DropdownItem>amour</DropdownItem>
+          <DropdownItem>guerre</DropdownItem>
+          <DropdownItem>fete</DropdownItem>
+          <DropdownItem>ivresse</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
     </div>
   );
 }

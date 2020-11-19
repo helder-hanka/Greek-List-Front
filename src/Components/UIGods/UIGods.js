@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import GodList from './GodList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Form, Button, FormGroup, Label, Col } from 'reactstrap';
 
 import './UIGods.css';
 
@@ -17,7 +20,8 @@ const UIGods = () => {
         {   
             user_id: "5",
             title: "Kill Paul",
-            status_id: "2"
+            status_id: "2",
+            finish: true
 
         }
     ]
@@ -27,7 +31,7 @@ const UIGods = () => {
     console.log(god)
 
     const [ userDatas, setUserDatas ] = useState(myArrayUser)
-    const { title, status_id } = userDatas;
+    const { title, status_id, finish } = userDatas;
     console.log(userDatas)
     
 
@@ -65,18 +69,30 @@ const UIGods = () => {
 
     const displayUserData = userDatas.map(userData => <GodList {...userData}/>)
 
+    const onSubmitMission = (e) => {
+        e.preventDefault();
+
+    }
+
     return (
         <div>
             <p>Name: {name}</p>
-            <form onSubmit={onSubmitForm}>
-                <input type="text"
-                    name="name"
-                    id="name"
-                    value={name}
-                    onChange={handleChange}
-                />
-                <input type="submit" value="Modify" />
-            </form>
+            <Form onSubmit={onSubmitForm}>
+                <FormGroup>
+                <Label check >
+                <Col sm={10}>
+                    <input for="examplePassword" className="mr-sm-2" type="text"
+                        name="name"
+                        id="name"
+                        value={name}
+                        onChange={handleChange}
+                    />
+                </Col>
+                </Label>
+                <Button type="submit">Modify</Button>
+                </FormGroup>                
+
+            </Form>
             {displayUserData}
         </div>
     )

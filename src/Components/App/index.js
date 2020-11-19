@@ -1,9 +1,10 @@
+import UIGods from '../UIGods/UIGods'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      Hello
+      <UIGods />
     </div>
   );
 }

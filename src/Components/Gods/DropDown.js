@@ -13,6 +13,7 @@ const Bardropdown = (props) => {
 
   return (
     <div className = "button" >
+      <h4>Select the skill : </h4>
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
       <DropdownToggle caret>
         All gods 

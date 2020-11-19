@@ -7,7 +7,7 @@ import './Cards.css';
 const Cards = ({ god }) => {
     console.log(god.avatar);
         return (
-            <div className="container">
+            <div>
                 <Card className="style">
                     <CardImg variant="top" src={god.avatar} alt={god.name} />
                     <CardBody>

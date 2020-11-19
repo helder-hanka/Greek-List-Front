@@ -61,7 +61,7 @@ class Gods extends React.Component {
 
     render() {
         return (
-            <div>
+            <div >
                 <Example />
                 <div className="container">
                     {this.state.gods.map(god => (

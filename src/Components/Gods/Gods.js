@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import Bardropdown from './Bardropdown'
+import './Gods.css';
 
-
-class Gods extends React.Components {
+class Gods extends React.Component {
     state = {
         gods: [
             {
@@ -30,23 +29,21 @@ class Gods extends React.Components {
                 name: 'Zeus',
                 avatar: 'https://i.pinimg.com/originals/f2/89/84/f28984a535b6738c11fd7547c90ae142.jpg'
             }
-        
         ]
     }
 
     render() {
         return (
             <div>
-                <Bardropdown />
-                    {this.state.gods.map(god => (
-                        <div key={god.id}>
-                            <img className="img" src={god.avatar} alt={god.name} />
-                            <h2>{god.name}</h2>
-                        </div>
-                    ))}
+                {this.state.gods.map(god => (
+                    <div key={god.id}>
+                        <img className="img" src={god.avatar} alt={god.name} />
+                        <h2>{god.name}</h2>
+                    </div>
+                ))}
             </div>
-        )
+        );
     }
 }
 
-export default Gods
+export default Gods;

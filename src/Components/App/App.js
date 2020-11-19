@@ -1,9 +1,7 @@
-import Gods from './Gods'
+import Gods from '../Gods/Gods'
 import './App.css'
 
-import Gods from '../Gods/Gods'
-
-function App() {
+function App () {
   return (
     <div>
       <Gods/>

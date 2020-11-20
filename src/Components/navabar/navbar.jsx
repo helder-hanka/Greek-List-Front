@@ -29,9 +29,6 @@ const NavBar = (props) => {
           <NavItem>
               <NavLink href="/">Home</NavLink>
             </NavItem>
-          <NavItem>
-              <NavLink href="/">Home</NavLink>
-            </NavItem>
             <NavItem>
               <NavLink href="/gods/">Gods</NavLink>
             </NavItem>

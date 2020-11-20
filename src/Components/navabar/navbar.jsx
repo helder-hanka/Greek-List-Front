@@ -7,8 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  NavbarText,
+  UncontrolledDropdown
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -22,24 +21,30 @@ const NavBar = (props) => {
     <div>
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">
-        <img src="../img/logo.png" alt="Greek List" />
+        Greek List
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
+          <NavItem>
+              <NavLink href="/">Home</NavLink>
+            </NavItem>
+          <NavItem>
+              <NavLink href="/">Home</NavLink>
+            </NavItem>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/gods/">Gods</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
+                Sign In
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          
         </Collapse>
       </Navbar>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
+import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -59,6 +60,13 @@ const Carrousel = (props) => {
 
   return (
       <div className="carrousel_container">
+        <div className="carrousel_encartDesktop">
+            <p>You are a Human Being?</p>
+            <p>Need some help?</p>
+            <p>...</p>
+            <p>RENT A GOD!</p>
+            <p><Button color="mdb-color">Sign In</Button>{' '} <Button color="mdb-color">Register</Button>{' '}</p>
+        </div>
         <Carousel
         className="carrousel_slides"
         activeIndex={activeIndex}

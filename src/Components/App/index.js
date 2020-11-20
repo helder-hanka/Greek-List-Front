@@ -1,9 +1,10 @@
+import Example from '../navabar/navbar'
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      Hello
+    <div>
+      <Example/>
     </div>
   );
 }

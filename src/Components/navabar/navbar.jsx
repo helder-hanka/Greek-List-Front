@@ -7,13 +7,12 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
-  NavbarText,
+  UncontrolledDropdown
 } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-const Example = (props) => {
+const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -21,27 +20,35 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">
+        Greek List
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
+          <NavItem>
+              <NavLink href="/">Home</NavLink>
+            </NavItem>
+          <NavItem>
+              <NavLink href="/">Home</NavLink>
+            </NavItem>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href="/gods/">Gods</NavLink>
             </NavItem>
             <NavItem>
               <NavLink href="https://github.com/reactstrap/reactstrap">
-                GitHub
+                Sign In
               </NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               
             </UncontrolledDropdown>
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          
         </Collapse>
       </Navbar>
     </div>
   );
 };
 
-export default Example;
+export default NavBar;

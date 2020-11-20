@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import qs from 'qs';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -12,16 +12,18 @@ const  GodList = () => {
         {   
             user_id: "5",
             title: "Kill Paul",
-            status_id: "2",
+            status_id: 1,
             name: "refused"
         }
     ]
     
     const [ userDatas, setUserDatas ] = useState(myArrayUser)
-    const { name, status_id, title } = userDatas;
+    const { name, status_id, title } = userDatas[0];
     console.log(userDatas)
 
-    // const displayUserData = userDatas.map(userData => <GodList finish={finish} {...userData}/>)
+    useEffect(() => {
+        
+    }, [userDatas[0]])
 
     
     
@@ -38,25 +40,32 @@ const  GodList = () => {
         const url =''
         fetch(url, config)
     }
-    
-    const displayStatus = (decision) => {
-        if (decision === 2) {
-            return 'accepted'
-        } else if (decision === 3) {
-            return 'refused'
-        } else if (decision === 4){
-            return 'done'
+    // pending chois = 1
+    // accepted = 2
+    // refused = 3
+
+    // done: Cfait = 4
+
+    const test = (e) => {
+        if (e === 1 && e !== 2 && e !== 3) {
+            return true
+        } else if (e === 2) {
+            return true
         }
     }
 
-
-    const displayAccepted = displayStatus(status_id) === "accepted" ? `${"success"}` :`${"secondary"}`  ;
+    // const displayAccepted = (status_id === 2 || !status_id === 4 ||  status_id === 1) && (status_id === 3) ? `${"success"}` : `${"secondary"}`; 4
+    const displayAccepted = test(status_id) ? `${"success"}` : `${"secondary"}`;
     console.log('Accepted', displayAccepted)
     // const displayFinish  = displayStatus(status_id) === "done" ? `${"success"}` : `${"secondary"}`;
-    const displayRefused = displayStatus(status_id) === "refused" ? `${"secondary"}` : `${"danger"}`;
+
+    const displayRefused = test(status_id) ?`${"secondary"}` : `${"danger"}` ;
+
+    // const displayRefused = status_id === 3 ? `${"danger"}` :`${"secondary"}` ;
     console.log('Refused', displayRefused)
+
     // const displayPending = displayStatus(status_id) === "pending" ? `${"success"}` : `${"secondary"}`;
-    // const displayFinish  = (displayStatus(status_id) !== "done" && displayStatus(status_id) !==  "pending") ? `${"secondary"}` : `${"success"}`;
+    // const displayFinish  = status_id === 4 ?`${"success"}` : `${"secondary"}`;
     // console.log('Finish', displayFinish)
     // const displayLetter = finish ? 'A' : '?';
 
@@ -76,7 +85,7 @@ const  GodList = () => {
                     <tr>
                         <td >{userData.title}</td>
                         <td>{userData.status_id}</td>
-                        <td><ButtonToggle color={displayAccepted} 
+                        <td><ButtonToggle color={displayAccepted}
                         name='accepted' type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
                         <td><ButtonToggle color={displayRefused} 
                         name="refused" type="submit" onClick={(e) => onSubmitMission(e)}>X</ButtonToggle></td>
@@ -91,36 +100,3 @@ const  GodList = () => {
 }
 
 export default GodList;
-
-        // <ButtonToggle color="primary">primary</ButtonToggle>{' '}
-        // <ButtonToggle color="secondary">secondary</ButtonToggle>{' '}
-        // <ButtonToggle color="success">success</ButtonToggle>{' '}
-        // <ButtonToggle color="info">info</ButtonToggle>{' '}
-        // <ButtonToggle color="warning">warning</ButtonToggle>{' '}
-        // <ButtonToggle color="danger">danger</ButtonToggle>{' '}
-
-
-
-/*
-{ if (displayFinishPending(status_id) === "accepted") {
-return  <td><ButtonToggle  color="success" name='accepted' type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-        <td><ButtonToggle color="secondary" name="refused" type="submit" onClick={(e) => onSubmitMission(e)}>X</ButtonToggle></td>
-        <td><ButtonToggle color="secondary" name="done" type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-} else if (displayFinishPending(status_id) === "refused") {
-return  <td><ButtonToggle  color="secondary" name='accepted' type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-        <td><ButtonToggle color="danger" name="refused" type="submit" onClick={(e) => onSubmitMission(e)}>X</ButtonToggle></td>
-        <td><ButtonToggle color="secondary" name="done" type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-} else if (displayFinishPending(status_id) === "done") {
-return  <td><ButtonToggle  color="secondary" name='accepted' type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-        <td><ButtonToggle color="secondary" name="refused" type="submit" onClick={(e) => onSubmitMission(e)}>X</ButtonToggle></td>
-        <td><ButtonToggle color="success" name="done" type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-} else {
-return  <td><ButtonToggle  color="success" name='accepted' type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-        <td><ButtonToggle color="danger" name="refused" type="submit" onClick={(e) => onSubmitMission(e)}>X</ButtonToggle></td>
-        <td><ButtonToggle color="secondary" name="done" type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-}    
-
-
-    <td><ButtonToggle  color="success" name='accepted' type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-    <td><ButtonToggle color="danger" name="refused" type="submit" onClick={(e) => onSubmitMission(e)}>X</ButtonToggle></td>
-    <td><ButtonToggle color={displayFinish} name="done" type="submit" onClick={(e) => onSubmitMission(e)}>{displayLetter}</ButtonToggle></td> */

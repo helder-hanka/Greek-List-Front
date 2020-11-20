@@ -50,18 +50,21 @@ const  GodList = () => {
     }
 
 
-    // const displayFinish  = displayStatus(status_id) === "done" && displayStatus(status_id) ===  "pending" ? `${"success"}` : `${"secondary"}`;
+    const displayAccepted = displayStatus(status_id) === "accepted" ? `${"success"}` :`${"secondary"}`  ;
+    console.log('Accepted', displayAccepted)
     // const displayFinish  = displayStatus(status_id) === "done" ? `${"success"}` : `${"secondary"}`;
-    // const displayRefused = displayStatus(status_id) === "refused" ? `${"secondary"}` : `${"danger"}`;
-    // const displayAccepted = displayStatus(status_id) === "accepted" ? `${"secondary"}` : `${"success"}`;
-    //const displayPending = displayStatus(status_id) === "pending" ? `${"success"}` : `${"secondary"}`;
+    const displayRefused = displayStatus(status_id) === "refused" ? `${"secondary"}` : `${"danger"}`;
+    console.log('Refused', displayRefused)
+    // const displayPending = displayStatus(status_id) === "pending" ? `${"success"}` : `${"secondary"}`;
+    // const displayFinish  = (displayStatus(status_id) !== "done" && displayStatus(status_id) !==  "pending") ? `${"secondary"}` : `${"success"}`;
+    // console.log('Finish', displayFinish)
     // const displayLetter = finish ? 'A' : '?';
 
     const display = userDatas.map((userData, index) => 
         <div key={index}>
             <Table striped>
                 <thead>
-                        <tr>
+                    <tr>
                         <th>Title</th>
                         <th>Status</th>
                         <th>Accept</th>
@@ -73,9 +76,12 @@ const  GodList = () => {
                     <tr>
                         <td >{userData.title}</td>
                         <td>{userData.status_id}</td>
-                        {/* <td><ButtonToggle  color={displayAccepted} name='accepted' type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
-                        <td><ButtonToggle color={displayRefused} name="refused" type="submit" onClick={(e) => onSubmitMission(e)}>X</ButtonToggle></td>
-                        <td><ButtonToggle color={displayFinish} name="done" type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td> */}
+                        <td><ButtonToggle color={displayAccepted} 
+                        name='accepted' type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
+                        <td><ButtonToggle color={displayRefused} 
+                        name="refused" type="submit" onClick={(e) => onSubmitMission(e)}>X</ButtonToggle></td>
+                        <td><ButtonToggle //color={displayFinish} 
+                        name="done" type="submit" onClick={(e) => onSubmitMission(e)}>V</ButtonToggle></td>
                     </tr>
                 </tbody>
             </Table>

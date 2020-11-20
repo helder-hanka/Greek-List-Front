@@ -44,7 +44,7 @@ class Login extends React.Component {
             id="password"
             onChange={this.onChange}
           />
-          <button>Submit</button>
+          <button>Log In</button>
         </form>
       </>
     );

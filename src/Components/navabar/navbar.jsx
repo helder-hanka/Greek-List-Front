@@ -9,6 +9,7 @@ import {
   NavLink,
   UncontrolledDropdown
 } from "reactstrap";
+import Login from '../Security/Login';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -41,7 +42,7 @@ const NavBar = (props) => {
               
             </UncontrolledDropdown>
           </Nav>
-          
+          <Login />
         </Collapse>
       </Navbar>
     </div>

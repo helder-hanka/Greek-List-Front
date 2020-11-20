@@ -1,9 +1,10 @@
+import FooterPage from "../footer/footer";
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      Hello
+    <div>
+      <FooterPage/>
     </div>
   );
 }

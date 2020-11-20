@@ -1,5 +1,8 @@
 //import UIGods from '../UIGods/UIGods'
 import Login from '../Security/Login'
+import React from 'react';
+import Home from '../Home/Home'
+
 import './App.css';
 
 function App() {
@@ -7,6 +10,7 @@ function App() {
     <div className="App">
       {/* <UIGods /> */}
       <Login />
+      <Home />
     </div>
   );
 }

@@ -1,12 +1,12 @@
-import Example from '../navabar/navbar'
-import FooterPage from "../footer/footer";
+import React from 'react';
+import Home from '../Home/Home'
+
 import './App.css';
 
 function App() {
   return (
-    <div>
-      <Example/>
-      <FooterPage/>
+    <div className="App">
+      <Home />
     </div>
   );
 }

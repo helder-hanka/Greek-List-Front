@@ -1,0 +1,11 @@
+.carrousel_container {
+    width: 60%;
+    margin: auto;
+    background-image: cover;
+    padding: 30px;
+    /* border: 2px dashed green; */
+}
+
+.carrousel_slides {
+    text-align: center;
+}

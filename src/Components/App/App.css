@@ -1,1 +1,8 @@
+.App h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
 
+.App p {
+    text-align: justify;
+}

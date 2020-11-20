@@ -13,7 +13,7 @@ import {
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-const Example = (props) => {
+const NavBar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -21,7 +21,9 @@ const Example = (props) => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand href="/">
+        <img src="../img/logo.png" alt="Greek List" />
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
@@ -44,4 +46,4 @@ const Example = (props) => {
   );
 };
 
-export default Example;
+export default NavBar;

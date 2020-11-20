@@ -1,4 +1,4 @@
-import UIGods from '../UIGods/UIGods'
+//import UIGods from '../UIGods/UIGods'
 import Login from '../Security/Login'
 import './App.css';
 

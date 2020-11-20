@@ -1,6 +1,8 @@
 import React from 'react';
 import Navbar from './Components/Navbar';
 
+import './App.css';
+
 import Home from './Components/Home/Home';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -9,7 +11,6 @@ import About from './Components/About/About';
 import Contact from './Components/Contact/ContactUS';
 import SignUp from './Components/SignUp/SignUp';
 
-import './App.css';
 
 function App() {
   return (

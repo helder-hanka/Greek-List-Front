@@ -1,5 +1,5 @@
 import React from 'react';
-import PopUp from './PopUp';
+import PopUp from './PopUpregister';
 import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

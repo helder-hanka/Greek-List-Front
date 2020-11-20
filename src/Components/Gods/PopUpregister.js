@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-const PopUp = (props) => {
+import './popup.css';
+const PopUpregister = (props) => {
+  
   const {
-    buttonLabel,
     className
   } = props;
 
@@ -18,8 +18,16 @@ const PopUp = (props) => {
       <Button color="danger" onClick={toggle}>More Info</Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle}>Modal title</ModalHeader>
-        <ModalBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <ModalBody className = "alignement" >
+          <img className = "imagemodal"  src="https://i.pinimg.com/originals/f2/89/84/f28984a535b6738c11fd7547c90ae142.jpg" alt="Athéna" />
+          <p className = "border" >
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+        </ModalBody>
+        <ModalBody className = "buttonmodal" >
+          <p>Register to rent a god</p>
+          <button className="button1" >Sign in</button>
+          <button>register</button>
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>Send a request</Button>{' '}
@@ -29,4 +37,4 @@ const PopUp = (props) => {
   );
 }
 
-export default PopUp;
+export default PopUpregister;
